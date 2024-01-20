@@ -24,7 +24,7 @@ public class DayLoop : MonoBehaviour
     public GameObject recapPanel;
     public BarManager barManager;
     private GameManager gm;
-    public bool canTamp;
+    public bool canTamp = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +47,9 @@ public class DayLoop : MonoBehaviour
     
     public void DeniedPressed()
     {
+
+        if (!canTamp) { return ;}
+        canTamp = false;
         Debug.Log("DENIED !");
         moneyGained += curClient.commission;
         barManager.AddMoney(curClient.commission);
@@ -60,6 +63,9 @@ public class DayLoop : MonoBehaviour
 
     public void ApprovedPressed()
     {
+
+        if (!canTamp) { return ;}
+        canTamp = false;
         Debug.Log("Approved.");
         moneySpent -= curClient.cost;
         if (curClient.reward)
@@ -88,6 +94,7 @@ public class DayLoop : MonoBehaviour
             tmp.transform.localScale = fileSize;
             clientFiles.Add(tmp);
         }
+        canTamp = true;
     }
 
     private void CheckEndingDay()
@@ -147,12 +154,18 @@ public class DayLoop : MonoBehaviour
     {
         float elapsedTime = 0f;
         stuff.transform.parent = newParent;
+        Vector3 pileTargetPosition = Vector3.zero;
         Vector3 startingPosition = stuff.transform.localPosition;
         Quaternion startingRotation = stuff.transform.localRotation;
+        if (newParent.gameObject.tag != "Hand")
+        {
+            pileTargetPosition = new Vector3(targetLocalPosition.x, targetLocalPosition.y, targetLocalPosition.y - ((float)newParent.childCount / 10));
+        }
+        Debug.Log(newParent.childCount);
 
         while (elapsedTime < 1.0f)
         {
-            stuff.transform.localPosition = Vector3.Lerp(startingPosition, targetLocalPosition, elapsedTime / 1.0f);
+            stuff.transform.localPosition = Vector3.Lerp(startingPosition, pileTargetPosition, elapsedTime / 1.0f);
             stuff.transform.localRotation = Quaternion.Slerp(startingRotation, targetLocalRotation, elapsedTime / 1.0f);
 
             elapsedTime += Time.deltaTime;
@@ -160,7 +173,9 @@ public class DayLoop : MonoBehaviour
         }
 
         // Ensure the final position and rotation are exactly the target position and rotation
-        stuff.transform.localPosition = Vector3.zero;
+        stuff.transform.localPosition = pileTargetPosition;
         stuff.transform.localRotation = new Quaternion(0,0,0,1);
+
+        canTamp = true;
     }
 }

@@ -193,7 +193,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 1157259864}
-  m_PlaneDistance: 0.3
+  m_PlaneDistance: 0.2
   m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 196479181}
   m_Layer: 0
   m_Name: HandDeck
-  m_TagString: Untagged
+  m_TagString: Hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1093,7 +1093,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.1
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -1642,6 +1642,7 @@ MonoBehaviour:
   clientFiles: []
   recapPanel: {fileID: 231601585}
   barManager: {fileID: 1545864495}
+  canTamp: 0
 --- !u!4 &1545864494
 Transform:
   m_ObjectHideFlags: 0
@@ -1811,6 +1812,10 @@ MonoBehaviour:
   pausePanel: {fileID: 1686919844}
   optionPanel: {fileID: 197708647}
   dayLoop: {fileID: 0}
+  cam: {fileID: 1157259864}
+  cameraController: {fileID: 0}
+  mouseLook: {x: 0, y: 0}
+  mouseSensitivity: 35
 --- !u!1001 &1857657161
 PrefabInstance:
   m_ObjectHideFlags: 0
