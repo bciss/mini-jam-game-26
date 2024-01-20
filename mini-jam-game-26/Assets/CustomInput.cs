@@ -44,6 +44,24 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Denied"",
+                    ""type"": ""Button"",
+                    ""id"": ""e1bea476-63e1-4df9-93f5-1215657c3dc9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Approved"",
+                    ""type"": ""Button"",
+                    ""id"": ""00d6fb5d-7e67-4e0b-abd6-03543b1e46e5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -68,6 +86,28 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ccc6d928-047f-4e33-985b-47c9a98ab63d"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Denied"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fab91abc-aec0-411d-a2d1-decad2730fe2"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Approved"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -78,6 +118,8 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
         m_Base = asset.FindActionMap("Base", throwIfNotFound: true);
         m_Base_Space = m_Base.FindAction("Space", throwIfNotFound: true);
         m_Base_Pause = m_Base.FindAction("Pause", throwIfNotFound: true);
+        m_Base_Denied = m_Base.FindAction("Denied", throwIfNotFound: true);
+        m_Base_Approved = m_Base.FindAction("Approved", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -141,12 +183,16 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
     private List<IBaseActions> m_BaseActionsCallbackInterfaces = new List<IBaseActions>();
     private readonly InputAction m_Base_Space;
     private readonly InputAction m_Base_Pause;
+    private readonly InputAction m_Base_Denied;
+    private readonly InputAction m_Base_Approved;
     public struct BaseActions
     {
         private @CustomInput m_Wrapper;
         public BaseActions(@CustomInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Space => m_Wrapper.m_Base_Space;
         public InputAction @Pause => m_Wrapper.m_Base_Pause;
+        public InputAction @Denied => m_Wrapper.m_Base_Denied;
+        public InputAction @Approved => m_Wrapper.m_Base_Approved;
         public InputActionMap Get() { return m_Wrapper.m_Base; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -162,6 +208,12 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @Denied.started += instance.OnDenied;
+            @Denied.performed += instance.OnDenied;
+            @Denied.canceled += instance.OnDenied;
+            @Approved.started += instance.OnApproved;
+            @Approved.performed += instance.OnApproved;
+            @Approved.canceled += instance.OnApproved;
         }
 
         private void UnregisterCallbacks(IBaseActions instance)
@@ -172,6 +224,12 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @Denied.started -= instance.OnDenied;
+            @Denied.performed -= instance.OnDenied;
+            @Denied.canceled -= instance.OnDenied;
+            @Approved.started -= instance.OnApproved;
+            @Approved.performed -= instance.OnApproved;
+            @Approved.canceled -= instance.OnApproved;
         }
 
         public void RemoveCallbacks(IBaseActions instance)
@@ -193,5 +251,7 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
     {
         void OnSpace(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnDenied(InputAction.CallbackContext context);
+        void OnApproved(InputAction.CallbackContext context);
     }
 }

@@ -645,7 +645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 904137722}
-  breathSpeed: 1
+  breathSpeed: 1.5
   minAlpha: 0.1
   maxAlpha: 1
 --- !u!1 &1417900430
