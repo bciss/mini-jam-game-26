@@ -24,6 +24,7 @@ public class DayLoop : MonoBehaviour
     public GameObject recapPanel;
     public BarManager barManager;
     private GameManager gm;
+    public bool canTamp;
     // Start is called before the first frame update
     void Start()
     {
@@ -64,10 +65,12 @@ public class DayLoop : MonoBehaviour
         if (curClient.reward)
         {
             moneyGained += curClient.rewardAmount;
+            suspicionGained += suspicionCalculator(curClient.suspicion);
             barManager.AddMoney(curClient.rewardAmount);
             barManager.AddSuspicion(suspicionCalculator(curClient.suspicion));
         } else 
         {
+            suspicionGained += suspicionCalculator(curClient.suspicion);
             barManager.AddSuspicion(-suspicionCalculator(curClient.suspicion));
         }
         StartCoroutine(LerpPositionAndRotation(curFile, Vector3.zero, new Quaternion(0,0,0,1), approvedDeck));
@@ -76,7 +79,7 @@ public class DayLoop : MonoBehaviour
     }
     public void InstantiateAllClientFiles()
     {
-        int i = 0;
+        // int i = 0;
         foreach (Client client in clients)
         {
             GameObject tmp = Instantiate(clientFilePrefab, todoDeck, false);
@@ -89,7 +92,7 @@ public class DayLoop : MonoBehaviour
 
     private void CheckEndingDay()
     {
-        if (suspicionGained >= suspicionLimit)
+        if ((suspicionGained >= suspicionLimit) || (clientCount >= clients.Count))
         {
             EndDay(false);
         }

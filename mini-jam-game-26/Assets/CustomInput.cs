@@ -62,6 +62,15 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Rotation"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""15f84295-b219-47ba-a165-cd391b210aba"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -108,6 +117,17 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
                     ""action"": ""Approved"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f622e698-c7b9-4188-9c28-251f9e7ab9a5"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -120,6 +140,7 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
         m_Base_Pause = m_Base.FindAction("Pause", throwIfNotFound: true);
         m_Base_Denied = m_Base.FindAction("Denied", throwIfNotFound: true);
         m_Base_Approved = m_Base.FindAction("Approved", throwIfNotFound: true);
+        m_Base_Rotation = m_Base.FindAction("Rotation", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -185,6 +206,7 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Base_Pause;
     private readonly InputAction m_Base_Denied;
     private readonly InputAction m_Base_Approved;
+    private readonly InputAction m_Base_Rotation;
     public struct BaseActions
     {
         private @CustomInput m_Wrapper;
@@ -193,6 +215,7 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
         public InputAction @Pause => m_Wrapper.m_Base_Pause;
         public InputAction @Denied => m_Wrapper.m_Base_Denied;
         public InputAction @Approved => m_Wrapper.m_Base_Approved;
+        public InputAction @Rotation => m_Wrapper.m_Base_Rotation;
         public InputActionMap Get() { return m_Wrapper.m_Base; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -214,6 +237,9 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
             @Approved.started += instance.OnApproved;
             @Approved.performed += instance.OnApproved;
             @Approved.canceled += instance.OnApproved;
+            @Rotation.started += instance.OnRotation;
+            @Rotation.performed += instance.OnRotation;
+            @Rotation.canceled += instance.OnRotation;
         }
 
         private void UnregisterCallbacks(IBaseActions instance)
@@ -230,6 +256,9 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
             @Approved.started -= instance.OnApproved;
             @Approved.performed -= instance.OnApproved;
             @Approved.canceled -= instance.OnApproved;
+            @Rotation.started -= instance.OnRotation;
+            @Rotation.performed -= instance.OnRotation;
+            @Rotation.canceled -= instance.OnRotation;
         }
 
         public void RemoveCallbacks(IBaseActions instance)
@@ -253,5 +282,6 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
         void OnPause(InputAction.CallbackContext context);
         void OnDenied(InputAction.CallbackContext context);
         void OnApproved(InputAction.CallbackContext context);
+        void OnRotation(InputAction.CallbackContext context);
     }
 }
