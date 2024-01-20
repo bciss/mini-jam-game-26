@@ -31,6 +31,7 @@ public class DayLoop : MonoBehaviour
         gm.dayLoop = this;
         barManager.maxMoney = moneyGoal;
         barManager.maxSuspicion = suspicionLimit;
+        RandomizeListOrder();
         InstantiateAllClientFiles();
         SetNextClient();
     }
@@ -64,6 +65,10 @@ public class DayLoop : MonoBehaviour
         {
             moneyGained += curClient.rewardAmount;
             barManager.AddMoney(curClient.rewardAmount);
+            barManager.AddSuspicion(suspicionCalculator(curClient.suspicion));
+        } else 
+        {
+            barManager.AddSuspicion(-suspicionCalculator(curClient.suspicion));
         }
         StartCoroutine(LerpPositionAndRotation(curFile, Vector3.zero, new Quaternion(0,0,0,1), approvedDeck));
         CheckEndingDay();
@@ -112,6 +117,19 @@ public class DayLoop : MonoBehaviour
                 return 0;
         }
 
+    }
+    public void RandomizeListOrder()
+    {
+        // Use Fisher-Yates shuffle algorithm to randomize the list
+        int count = clients.Count;
+        for (int i = count - 1; i > 0; i--)
+        {
+            int randomIndex = Random.Range(0, i + 1);
+            // Swap elements
+            Client temp = clients[i];
+            clients[i] = clients[randomIndex];
+            clients[randomIndex] = temp;
+        }
     }
 
     private void EndDay(bool success)

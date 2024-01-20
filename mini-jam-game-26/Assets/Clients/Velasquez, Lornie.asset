@@ -10,17 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cda1524f123353f40bea5d5860aa8495, type: 3}
-  m_Name: Tryfing
+  m_Name: Velasquez, Lornie
   m_EditorClassIdentifier: 
-  clientName: Tryfing, Barbara
-  clientID: 1917
-  age: 54
+  clientName: Velasquez, Lornie
+  clientID: 6403
+  age: 21
   reason: Prescription Drug
-  procedure: Insulin
-  moreInfos: 'Client has attached invoice of Insulin totalling '
+  procedure: Amoxicillan
+  moreInfos: Client has attached tests that show a test for positive A Streptococcus
+    and the doctor's prescription of relevant antibiotics.
   suspicion: 0
-  cost: 300
-  commission: 150
+  cost: 25
+  commission: 3
   reward: 0
   rewardAmount: 0
   picture: {fileID: 0}

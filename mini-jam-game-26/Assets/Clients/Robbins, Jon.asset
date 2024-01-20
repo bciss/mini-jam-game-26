@@ -10,17 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cda1524f123353f40bea5d5860aa8495, type: 3}
-  m_Name: Tryfing
+  m_Name: Robbins, Jon
   m_EditorClassIdentifier: 
-  clientName: Tryfing, Barbara
-  clientID: 1917
-  age: 54
-  reason: Prescription Drug
-  procedure: Insulin
-  moreInfos: 'Client has attached invoice of Insulin totalling '
+  clientName: Robbins, Jon
+  clientID: 5778
+  age: 2
+  reason: Medical Necessity (Previous Denial)
+  procedure: Varicella Vaccination
+  moreInfos: Client's doctor reports the necessity for children to receive immunizations
+    at crucial years of development and the standard acceptance of the Varicella
+    (Chickenpox) vaccine in such immunizations.
   suspicion: 0
-  cost: 300
-  commission: 150
+  cost: 115
+  commission: 10
   reward: 0
   rewardAmount: 0
   picture: {fileID: 0}

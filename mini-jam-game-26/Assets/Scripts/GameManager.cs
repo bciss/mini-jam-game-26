@@ -56,7 +56,6 @@ public class GameManager : MonoBehaviour
     public void TriggerPausePanel()
     {
         Debug.Log("Escape pressed");
-        Debug.Log(pausePanel.activeSelf);
         if (pausePanel.activeSelf)
         {
              Time.timeScale = 1;

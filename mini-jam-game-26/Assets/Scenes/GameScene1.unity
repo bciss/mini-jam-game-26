@@ -3864,22 +3864,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dayNumber: 1
-  moneyGoal: 500
-  suspicionLimit: 500
+  moneyGoal: 50000
+  suspicionLimit: 100
   moneyGained: 0
   moneySpent: 0
   suspicionGained: 0
   clients:
+  - {fileID: 11400000, guid: c00868d3b13e78a4a989c5625b54223f, type: 2}
+  - {fileID: 11400000, guid: 0cd557e8c0480a54da52091368465310, type: 2}
+  - {fileID: 11400000, guid: 743e9bcb19df9864eabb86f3d99ef328, type: 2}
+  - {fileID: 11400000, guid: 681993ab014e89a4bb46cb31bb0539c3, type: 2}
+  - {fileID: 11400000, guid: 9e7e3030944bc394cb77cd853b78e170, type: 2}
+  - {fileID: 11400000, guid: ea8f4e7c614ecfc469b959310dc57a60, type: 2}
+  - {fileID: 11400000, guid: 39ac29be136318941a92cfdeeb2d1a89, type: 2}
+  - {fileID: 11400000, guid: 2392cbf634cd9f747ac9aa17d2ae6cbb, type: 2}
+  - {fileID: 11400000, guid: 0699a6ca5061e2245b134f99a2fa0370, type: 2}
+  - {fileID: 11400000, guid: 0655c62f667a9c84790897a15bb49ed9, type: 2}
+  - {fileID: 11400000, guid: c5b39bee0503dd14db963c6f04b39fa5, type: 2}
+  - {fileID: 11400000, guid: 621bfed2f70c2d34d9648bb1b7d12fe3, type: 2}
+  - {fileID: 11400000, guid: 901a23c8302eb4443a1ba4de707df67f, type: 2}
+  - {fileID: 11400000, guid: 5206c55590abfe74b827472400d7f646, type: 2}
+  - {fileID: 11400000, guid: c38fda3ab81f9dc4caa4dd71295dc892, type: 2}
+  - {fileID: 11400000, guid: 875c2fcf68fb3b241b9ed5e1c37c6dd4, type: 2}
+  - {fileID: 11400000, guid: fb232e32095cd7747a7bb52fbc84d8b3, type: 2}
+  - {fileID: 11400000, guid: 6664915f36b38c747acea3deb17574c8, type: 2}
   - {fileID: 11400000, guid: c44c246136d715f4b95fd167c22b9ce7, type: 2}
-  - {fileID: 11400000, guid: c44c246136d715f4b95fd167c22b9ce7, type: 2}
-  - {fileID: 11400000, guid: c44c246136d715f4b95fd167c22b9ce7, type: 2}
-  - {fileID: 11400000, guid: c44c246136d715f4b95fd167c22b9ce7, type: 2}
-  - {fileID: 11400000, guid: c44c246136d715f4b95fd167c22b9ce7, type: 2}
-  - {fileID: 11400000, guid: c44c246136d715f4b95fd167c22b9ce7, type: 2}
-  - {fileID: 11400000, guid: c44c246136d715f4b95fd167c22b9ce7, type: 2}
-  - {fileID: 11400000, guid: c44c246136d715f4b95fd167c22b9ce7, type: 2}
-  - {fileID: 11400000, guid: c44c246136d715f4b95fd167c22b9ce7, type: 2}
-  - {fileID: 11400000, guid: c44c246136d715f4b95fd167c22b9ce7, type: 2}
+  - {fileID: 11400000, guid: 95022cc424c64d54dab92e2250d61c23, type: 2}
+  - {fileID: 11400000, guid: 21648356863b67b4fb56c03efdf246a3, type: 2}
+  - {fileID: 11400000, guid: cf07e8bed9edb2e459058c19c3e34e70, type: 2}
   clientCount: 1
   curClient: {fileID: 0}
   curFile: {fileID: 0}

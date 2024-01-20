@@ -10,17 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cda1524f123353f40bea5d5860aa8495, type: 3}
-  m_Name: Tryfing
+  m_Name: Melton, Marjorie
   m_EditorClassIdentifier: 
-  clientName: Tryfing, Barbara
-  clientID: 1917
-  age: 54
+  clientName: Melton, Marjorie
+  clientID: 7775
+  age: 38
   reason: Prescription Drug
-  procedure: Insulin
-  moreInfos: 'Client has attached invoice of Insulin totalling '
+  procedure: Gonal-F IVF Hormonal Medication
+  moreInfos: Client attached documents relating to their IVF treatment and past medical
+    examinations proving their infertility and need for medical intervention for
+    conception success.
   suspicion: 0
-  cost: 300
-  commission: 150
+  cost: 550
+  commission: 55
   reward: 0
   rewardAmount: 0
   picture: {fileID: 0}

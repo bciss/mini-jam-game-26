@@ -10,17 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cda1524f123353f40bea5d5860aa8495, type: 3}
-  m_Name: Tryfing
+  m_Name: House, Darius
   m_EditorClassIdentifier: 
-  clientName: Tryfing, Barbara
-  clientID: 1917
-  age: 54
-  reason: Prescription Drug
-  procedure: Insulin
-  moreInfos: 'Client has attached invoice of Insulin totalling '
+  clientName: House, Darius
+  clientID: 1441
+  age: 53
+  reason: Dental Service
+  procedure: Teeth Whitening Services (x10)
+  moreInfos: Client attached a record of their television appearances to justify
+    the need for dental work and up-close pictures of their flattering smile.
   suspicion: 0
-  cost: 300
-  commission: 150
-  reward: 0
-  rewardAmount: 0
+  cost: 10000
+  commission: 1000
+  reward: 1
+  rewardAmount: 5000
   picture: {fileID: 0}
