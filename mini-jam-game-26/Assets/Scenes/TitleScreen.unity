@@ -1043,10 +1043,14 @@ PrefabInstance:
     - target: {fileID: 4604451813261356965, guid: b4ac07345f930694db208675ea256f1f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 665682921}
+      objectReference: {fileID: 665682922}
     - target: {fileID: 4604451813261356965, guid: b4ac07345f930694db208675ea256f1f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: OnStartPerformed
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604451813261356965, guid: b4ac07345f930694db208675ea256f1f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TitleScreenManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5966999645361850479, guid: b4ac07345f930694db208675ea256f1f, type: 3}
       propertyPath: m_Pivot.x
