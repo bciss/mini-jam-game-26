@@ -32,21 +32,21 @@ namespace StarterAssets
 		{
 			if (!m_FocusActionsSetUp)
 			{
-#if UNITY_EDITOR
-				var ignoreInput = new InputAction(binding: "/Keyboard/escape");
-				ignoreInput.performed += context => m_IgnoreInput = true;
-				ignoreInput.Enable();
+// #if UNITY_EDITOR
+// 				var ignoreInput = new InputAction(binding: "/Keyboard/escape");
+// 				ignoreInput.performed += context => m_IgnoreInput = true;
+// 				ignoreInput.Enable();
 
-				var enableInput = new InputAction(binding: "/Mouse/leftButton");
-				enableInput.performed += context => m_IgnoreInput = false;
-				enableInput.Enable();
-#endif
+// 				var enableInput = new InputAction(binding: "/Mouse/leftButton");
+// 				enableInput.performed += context => m_IgnoreInput = false;
+// 				enableInput.Enable();
+// #endif
 				
-				var touchFocus = new InputAction(binding: "<pointer>/press");
-				touchFocus.performed += context => CameraManager.NotifyPlayerMoved();
-				touchFocus.Enable();
+// 				var touchFocus = new InputAction(binding: "<pointer>/press");
+// 				touchFocus.performed += context => CameraManager.NotifyPlayerMoved();
+// 				touchFocus.Enable();
 				
-				m_FocusActionsSetUp = true;
+// 				m_FocusActionsSetUp = true;
 			}
 		}
 

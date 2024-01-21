@@ -13,10 +13,12 @@ public class ClientFile : MonoBehaviour
     public TMP_Text reasonText;
     public TMP_Text procedureText;
     public TMP_Text moreInfosText;
+    public TMP_Text costText;
 
     public void UpdateClient(Client client)
     {
         // picture.sprite = client.picture;
+        costText.text = "$ " + client.cost.ToString();
         iDText.text = client.clientID.ToString();
         nameText.text = client.clientName;
         ageText.text = client.age.ToString();
