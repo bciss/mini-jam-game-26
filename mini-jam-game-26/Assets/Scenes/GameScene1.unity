@@ -1808,8 +1808,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dayNumber: 1
-  moneyGoal: 50000
-  suspicionLimit: 100
+  moneyGoal: 25000
+  suspicionLimit: 300
   moneyGained: 0
   moneySpent: 0
   suspicionGained: 0
@@ -2019,7 +2019,6 @@ MonoBehaviour:
   optionPanel: {fileID: 197708647}
   dayLoop: {fileID: 0}
   cam: {fileID: 1157259864}
-  cameraController: {fileID: 0}
   mouseLook: {x: 0, y: 0}
   mouseSensitivity: 35
 --- !u!1001 &1857657161
