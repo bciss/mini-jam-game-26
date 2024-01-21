@@ -23,6 +23,7 @@ public class VignetteIntensityController : MonoBehaviour
 
     IEnumerator DecreaseIntensityOverTime()
     {
+        
         float elapsedTime = 0f;
         Debug.Log(vignette);
         Debug.Log(vignette.intensity);
