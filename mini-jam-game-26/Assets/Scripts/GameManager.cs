@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
         input.Base.Pause.performed += ctx => TriggerPausePanel();
         input.Base.Denied.performed += ctx => dayLoop.DeniedPressed();
         input.Base.Approved.performed += ctx => dayLoop.ApprovedPressed();
+        input.Base.Space.performed += ctx => dayLoop.SetNextClient();
     }
     
     private void OnEnable()

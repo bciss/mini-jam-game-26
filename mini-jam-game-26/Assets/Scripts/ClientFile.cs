@@ -15,6 +15,14 @@ public class ClientFile : MonoBehaviour
     public TMP_Text moreInfosText;
     public TMP_Text costText;
 
+    public AudioClip[] sounds;
+    public AudioSource source;
+
+    void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
+
     public void UpdateClient(Client client)
     {
         // picture.sprite = client.picture;
@@ -25,5 +33,11 @@ public class ClientFile : MonoBehaviour
         reasonText.text = client.reason;
         procedureText.text = client.procedure;
         moreInfosText.text = client.moreInfos;
+    }
+    
+    public void PlayPaperSound()
+    {
+        source.clip = sounds[Random.Range(0, sounds.Length)];
+        source.Play();
     }
 }

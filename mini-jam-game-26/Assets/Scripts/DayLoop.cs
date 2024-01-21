@@ -13,7 +13,7 @@ public class DayLoop : MonoBehaviour
     public List<Client> clients;
     public int clientCount = 1;
     public  Client curClient;
-    public  GameObject curFile;
+    public  GameObject curFile = null;
     public GameObject clientFilePrefab;
     public Vector3 fileSize = new Vector3(1f, 1f, 1f);
     public Transform todoDeck;
@@ -34,37 +34,42 @@ public class DayLoop : MonoBehaviour
         barManager.maxSuspicion = suspicionLimit;
         RandomizeListOrder();
         InstantiateAllClientFiles();
-        SetNextClient();
+        clientCount = clients.Count - 1;
     }
 
     public void SetNextClient()
     {
-        curClient = clients[clientCount];
-        StartCoroutine(LerpPositionAndRotation(clientFiles[clientCount - 1], Vector3.zero, new Quaternion(0,0,0,1), HandDeck));
-        curFile = clientFiles[clientCount - 1];
-        clientCount += 1;
+        if (canTamp && curFile == null)
+        {
+            Debug.Log(clientCount);
+            curClient = clients[clientCount];
+            clientFiles[clientCount].GetComponent<ClientFile>().PlayPaperSound();
+            StartCoroutine(LerpPositionAndRotation(clientFiles[clientCount], Vector3.zero, new Quaternion(0,0,0,1), HandDeck));
+            curFile = clientFiles[clientCount];
+            clientCount -= 1;
+        }
     }
     
     public void DeniedPressed()
     {
 
-        if (!canTamp) { return ;}
+        if (!canTamp || curFile == null) { return ;}
         canTamp = false;
         Debug.Log("DENIED !");
         moneyGained += curClient.commission;
         barManager.AddMoney(curClient.commission);
         suspicionGained += suspicionCalculator(curClient.suspicion);
         barManager.AddSuspicion(suspicionCalculator(curClient.suspicion));
+        curFile.GetComponent<ClientFile>().PlayPaperSound();
         StartCoroutine(LerpPositionAndRotation(curFile, Vector3.zero, new Quaternion(0,0,0,1), deniedDeck));
         CheckEndingDay();
-        SetNextClient();
     }
 
 
     public void ApprovedPressed()
     {
 
-        if (!canTamp) { return ;}
+        if (!canTamp || curFile == null) { return ;}
         canTamp = false;
         Debug.Log("Approved.");
         moneySpent -= curClient.cost;
@@ -79,9 +84,9 @@ public class DayLoop : MonoBehaviour
             suspicionGained += suspicionCalculator(curClient.suspicion);
             barManager.AddSuspicion(-suspicionCalculator(curClient.suspicion));
         }
+        curFile.GetComponent<ClientFile>().PlayPaperSound();
         StartCoroutine(LerpPositionAndRotation(curFile, Vector3.zero, new Quaternion(0,0,0,1), approvedDeck));
         CheckEndingDay();
-        SetNextClient();
     }
     public void InstantiateAllClientFiles()
     {
@@ -90,16 +95,17 @@ public class DayLoop : MonoBehaviour
         {
             GameObject tmp = Instantiate(clientFilePrefab, todoDeck, false);
             tmp.GetComponent<ClientFile>().UpdateClient(client);
-            tmp.transform.localPosition = Vector3.zero;
+            tmp.transform.localPosition = new Vector3(0,0,-3f);
             tmp.transform.localScale = fileSize;
             clientFiles.Add(tmp);
+            StartCoroutine(LerpPositionAndRotation(tmp, Vector3.zero, new Quaternion(0,0,0,1), todoDeck));
         }
         canTamp = true;
     }
 
     private void CheckEndingDay()
     {
-        if ((suspicionGained >= suspicionLimit) || (clientCount >= clients.Count))
+        if ((suspicionGained >= suspicionLimit) || (clientCount < 0))
         {
             EndDay(false);
         }
@@ -152,6 +158,7 @@ public class DayLoop : MonoBehaviour
     // Coroutine to lerp the position
     private IEnumerator LerpPositionAndRotation(GameObject stuff, Vector3 targetLocalPosition, Quaternion targetLocalRotation, Transform newParent)
     {
+        canTamp = false;
         float elapsedTime = 0f;
         stuff.transform.parent = newParent;
         Vector3 pileTargetPosition = Vector3.zero;
@@ -159,9 +166,8 @@ public class DayLoop : MonoBehaviour
         Quaternion startingRotation = stuff.transform.localRotation;
         if (newParent.gameObject.tag != "Hand")
         {
-            pileTargetPosition = new Vector3(targetLocalPosition.x, targetLocalPosition.y, targetLocalPosition.y - ((float)newParent.childCount / 10));
+            pileTargetPosition = new Vector3(targetLocalPosition.x, targetLocalPosition.y, targetLocalPosition.y - ((float)newParent.childCount / 100));
         }
-        Debug.Log(newParent.childCount);
 
         while (elapsedTime < 1.0f)
         {
@@ -175,7 +181,10 @@ public class DayLoop : MonoBehaviour
         // Ensure the final position and rotation are exactly the target position and rotation
         stuff.transform.localPosition = pileTargetPosition;
         stuff.transform.localRotation = new Quaternion(0,0,0,1);
-
+        if (newParent.gameObject.tag != "Hand")
+        {
+            curFile = null;
+        }
         canTamp = true;
     }
 }
