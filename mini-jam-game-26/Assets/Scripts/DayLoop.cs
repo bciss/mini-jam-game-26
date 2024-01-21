@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -26,6 +27,8 @@ public class DayLoop : MonoBehaviour
     public BarManager barManager;
     private GameManager gm;
     public bool canTamp = false;
+    public List<GameObject> preStarts;
+    private int countPre;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,10 +39,17 @@ public class DayLoop : MonoBehaviour
         RandomizeListOrder();
         InstantiateAllClientFiles();
         clientCount = clients.Count - 1;
+        countPre = preStarts.Count;
     }
 
     public void SetNextClient()
     {
+        if (countPre > 0)
+        {
+            Destroy(preStarts[countPre - 1].gameObject);
+            countPre -= 1;
+            return ;
+        }
         if (canTamp && curFile == null)
         {
             Debug.Log(clientCount);
@@ -53,7 +63,6 @@ public class DayLoop : MonoBehaviour
     
     public void DeniedPressed()
     {
-
         if (!canTamp || curFile == null) { return ;}
         canTamp = false;
         Debug.Log("DENIED !");

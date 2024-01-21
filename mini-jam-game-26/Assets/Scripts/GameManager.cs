@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
-using Unity.Tutorials.Core.Editor;
 
 public class PlayerInfos
 {
