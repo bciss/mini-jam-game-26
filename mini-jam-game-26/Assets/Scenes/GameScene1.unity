@@ -501,6 +501,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2903736363820369956, guid: f7aec68169a63d84c8059ecc44382b0c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 2160800570294216872, guid: f7aec68169a63d84c8059ecc44382b0c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 7995697868550849948, guid: f7aec68169a63d84c8059ecc44382b0c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -1198,6 +1201,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 2903736363820369956, guid: 1a8f5509b655d2041a42b151fc809ac0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 7124100044943383337, guid: 1a8f5509b655d2041a42b151fc809ac0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 1a8f5509b655d2041a42b151fc809ac0, type: 3}
@@ -2914,6 +2920,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 320806}
     m_Modifications:
     - target: {fileID: 2787628844165410257, guid: 8095352366f5cc447972bd2bb77c7940, type: 3}
+      propertyPath: m_MaxValue
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2787628844165410257, guid: 8095352366f5cc447972bd2bb77c7940, type: 3}
+      propertyPath: m_MinValue
+      value: -80
+      objectReference: {fileID: 0}
+    - target: {fileID: 2787628844165410257, guid: 8095352366f5cc447972bd2bb77c7940, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1850546883}
@@ -3002,9 +3016,25 @@ PrefabInstance:
       value: OptionPanel
       objectReference: {fileID: 0}
     - target: {fileID: 5500434661442367055, guid: 8095352366f5cc447972bd2bb77c7940, type: 3}
+      propertyPath: m_MaxValue
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5500434661442367055, guid: 8095352366f5cc447972bd2bb77c7940, type: 3}
+      propertyPath: m_MinValue
+      value: -80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5500434661442367055, guid: 8095352366f5cc447972bd2bb77c7940, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1850546883}
+    - target: {fileID: 7172838313402480336, guid: 8095352366f5cc447972bd2bb77c7940, type: 3}
+      propertyPath: m_MaxValue
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172838313402480336, guid: 8095352366f5cc447972bd2bb77c7940, type: 3}
+      propertyPath: m_MinValue
+      value: -80
+      objectReference: {fileID: 0}
     - target: {fileID: 7172838313402480336, guid: 8095352366f5cc447972bd2bb77c7940, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

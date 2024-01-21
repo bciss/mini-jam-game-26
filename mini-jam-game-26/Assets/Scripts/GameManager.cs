@@ -110,15 +110,15 @@ public class GameManager : MonoBehaviour
 
     public void SetMasterLvl(float masterLvl)
     {
-        masterMixer.SetFloat("Master Volume", masterLvl);
+        masterMixer.SetFloat("Master", masterLvl);
     }
     public void SetMusicLvl(float musicLvl)
     {
-        masterMixer.SetFloat("Music Volume", musicLvl);
+        masterMixer.SetFloat("Music", musicLvl);
     }
     public void SetSFXLvl(float sfxLvl)
     {
-        masterMixer.SetFloat("SFX Volume", sfxLvl);
+        masterMixer.SetFloat("SFX", sfxLvl);
     }
 
     #endregion
