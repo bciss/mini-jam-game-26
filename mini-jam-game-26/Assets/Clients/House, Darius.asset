@@ -19,7 +19,7 @@ MonoBehaviour:
   procedure: Teeth Whitening Services (x10)
   moreInfos: Client attached a record of their television appearances to justify
     the need for dental work and up-close pictures of their flattering smile.
-  suspicion: 0
+  suspicion: 3
   cost: 10000
   commission: 1000
   reward: 1

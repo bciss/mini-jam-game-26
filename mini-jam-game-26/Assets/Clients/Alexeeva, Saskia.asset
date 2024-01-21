@@ -20,7 +20,7 @@ MonoBehaviour:
   moreInfos: Doctor attached documents describing several treatments used before
     resulting to knee surgery, documenting patient's need for a new knee or face
     life in a wheelchair
-  suspicion: 0
+  suspicion: 3
   cost: 31000
   commission: 3100
   reward: 0

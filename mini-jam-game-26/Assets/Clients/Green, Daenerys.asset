@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cda1524f123353f40bea5d5860aa8495, type: 3}
-  m_Name: New Client
+  m_Name: Green, Daenerys
   m_EditorClassIdentifier: 
   clientName: Green, Daenerys
   clientID: 6089
@@ -21,7 +21,7 @@ MonoBehaviour:
     Due to complications, the baby is not expected to survive. The doctor urges the
     claims agent to understand the medical implications on the mother of refusing
     this sizeable claim. The hospital of this claim is in-network.
-  suspicion: 0
+  suspicion: 3
   cost: 50000
   commission: 5000
   reward: 0

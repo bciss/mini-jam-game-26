@@ -19,7 +19,7 @@ MonoBehaviour:
   procedure: LASIK Surgery - L Eye
   moreInfos: Client's doctor attached information regarding a severe astygmtism in
     the left eye causing rapid progression to blindness.
-  suspicion: 0
+  suspicion: 1
   cost: 2200
   commission: 220
   reward: 0

@@ -21,7 +21,7 @@ MonoBehaviour:
     in success for mother and child. The mother stayed in the hospital for a few
     days until the initial denial of insurance payment, leaving against the doctor's
     recommendations.
-  suspicion: 0
+  suspicion: 3
   cost: 22000
   commission: 2200
   reward: 0

@@ -19,7 +19,7 @@ MonoBehaviour:
   procedure: Fitting for dentures
   moreInfos: Client has attached scans and pictures of teeth to show the need for
     dentures.
-  suspicion: 0
+  suspicion: 1
   cost: 1200
   commission: 120
   reward: 0

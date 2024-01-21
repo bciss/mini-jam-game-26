@@ -18,7 +18,7 @@ MonoBehaviour:
   reason: Prescription Drug
   procedure: Insulin
   moreInfos: 'Client has attached invoice of Insulin totalling '
-  suspicion: 0
+  suspicion: 1
   cost: 300
   commission: 150
   reward: 0

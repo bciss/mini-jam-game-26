@@ -19,7 +19,7 @@ MonoBehaviour:
   procedure: Botox
   moreInfos: Client has attached a signed photograph of themself for their latest
     action movie release.
-  suspicion: 0
+  suspicion: 3
   cost: 2800
   commission: 280
   reward: 1

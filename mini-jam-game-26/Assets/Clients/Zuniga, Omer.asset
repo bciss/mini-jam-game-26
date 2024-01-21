@@ -19,7 +19,7 @@ MonoBehaviour:
   procedure: Emergency Heart-Bypass Surgery
   moreInfos: Client's doctor attached documents re-itering the necessity of the surgery
     for the patient's life.
-  suspicion: 0
+  suspicion: 3
   cost: 49000
   commission: 4900
   reward: 0

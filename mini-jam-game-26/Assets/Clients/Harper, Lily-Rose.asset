@@ -19,7 +19,7 @@ MonoBehaviour:
   procedure: Radiation Therapy
   moreInfos: Client has attached several documents of continued treatments at an
     out-of-network Children's Hospital for their ongoing leukemia care.
-  suspicion: 0
+  suspicion: 2
   cost: 9755
   commission: 975
   reward: 0

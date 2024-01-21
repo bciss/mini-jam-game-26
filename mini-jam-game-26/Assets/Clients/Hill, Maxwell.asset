@@ -21,7 +21,7 @@ MonoBehaviour:
     the ICU and medical needs after a car accident that also killed his high school
     friend. The police have attached a police report explaining the car accident
     was caused by another driver irresponsibly drinking and driving.
-  suspicion: 0
+  suspicion: 2
   cost: 11000
   commission: 1100
   reward: 0

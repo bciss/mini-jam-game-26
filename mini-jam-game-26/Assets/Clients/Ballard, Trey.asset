@@ -20,7 +20,7 @@ MonoBehaviour:
   moreInfos: Client's dentist attached scans showing three impacted wisdom teeth
     in an xray and citing the necessity of an extraction to prevent absesses and
     other severe medical complications.
-  suspicion: 0
+  suspicion: 2
   cost: 2500
   commission: 250
   reward: 0

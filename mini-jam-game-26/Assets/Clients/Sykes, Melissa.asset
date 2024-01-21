@@ -22,7 +22,7 @@ MonoBehaviour:
     fetus due to risk of the mother''s life. [New Paragraph]: Boss has attached memorandum
     reminding claim agent that covering abortions with insurance is illegal in your
     state.'
-  suspicion: 0
+  suspicion: 2
   cost: 13000
   commission: 1300
   reward: 0
