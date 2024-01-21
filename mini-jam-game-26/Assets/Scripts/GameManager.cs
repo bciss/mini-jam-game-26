@@ -23,7 +23,6 @@ public class GameManager : MonoBehaviour
     public GameObject optionPanel;
     public DayLoop dayLoop;
     public Camera cam;
-    public PlayerCameraController cameraController;
     public Vector2 mouseLook;
     public float mouseSensitivity = 100f;
     private float xRotation;
@@ -104,8 +103,8 @@ public class GameManager : MonoBehaviour
 
     public void BackToMenu()
     {
-        Debug.Log("Changing scene to : TitleScreen");
         SceneManager.LoadScene("TitleScreen");
+        Destroy(this);
     }
 
     #region Settings

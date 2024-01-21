@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DayLoop : MonoBehaviour
 {
@@ -153,6 +154,16 @@ public class DayLoop : MonoBehaviour
         Debug.Log("Day ended");
         recapPanel.SetActive(true);
         Time.timeScale = 0;
+        Destroy(GameManager.Instance);
+        if (success)
+        {
+            SceneManager.LoadScene("WinEndScene");
+        }
+        else
+        {
+            SceneManager.LoadScene("LoseEndScene");
+        }
+
         // Trigger Recap Panel
     }
     // Coroutine to lerp the position
