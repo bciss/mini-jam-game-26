@@ -86,12 +86,13 @@ public class DayLoop : MonoBehaviour
         if (curClient.reward)
         {
             moneyGained += curClient.rewardAmount;
-            suspicionGained += suspicionCalculator(curClient.suspicion);
+            // suspicionGained += suspicionCalculator(curClient.suspicion);
             barManager.AddMoney(curClient.rewardAmount);
-            barManager.AddSuspicion(suspicionCalculator(curClient.suspicion));
+            // barManager.AddSuspicion(suspicionCalculator(curClient.suspicion));
         } else 
         {
-            suspicionGained += suspicionCalculator(curClient.suspicion);
+            suspicionGained -= suspicionCalculator(curClient.suspicion);
+            if (suspicionGained < 0) {suspicionGained = 0 ;}
             barManager.AddSuspicion(-suspicionCalculator(curClient.suspicion));
         }
         curFile.GetComponent<ClientFile>().PlayPaperSound();
@@ -160,9 +161,11 @@ public class DayLoop : MonoBehaviour
 
     private void EndDay(bool success)
     {
-        Debug.Log("Day ended");
-        recapPanel.SetActive(true);
+        Debug.Log("Day ended, gain : " + moneyGained + " limit : " + suspicionGained);
+        // recapPanel.SetActive(true);
         Time.timeScale = 0;
+        
+        StartCoroutine(DelayedEnd());
         Destroy(GameManager.Instance);
         if (success)
         {
@@ -174,6 +177,21 @@ public class DayLoop : MonoBehaviour
         }
 
         // Trigger Recap Panel
+    }
+    
+
+    IEnumerator DelayedEnd()
+    {
+        // Print a message before waiting
+        Debug.Log("Waiting for 1.5 seconds...");
+
+        // Wait for 2 seconds
+        yield return new WaitForSeconds(1.5f);
+
+        // Print a message after waiting
+        Debug.Log("Finished waiting for 1.5 seconds.");
+
+        // Perform any other actions you want to do after the wait
     }
     // Coroutine to lerp the position
     private IEnumerator LerpPositionAndRotation(GameObject stuff, Vector3 targetLocalPosition, Quaternion targetLocalRotation, Transform newParent)
