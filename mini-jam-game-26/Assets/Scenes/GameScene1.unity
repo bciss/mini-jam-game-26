@@ -1676,6 +1676,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2597732485363114303, guid: 25a1799c9bf16f743a7034ef9e523a9c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08a9ab45601baa445a3ee9667c884a36, type: 2}
     - target: {fileID: 3124592275130250841, guid: 25a1799c9bf16f743a7034ef9e523a9c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.7
@@ -1716,10 +1720,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3555052696950035463, guid: 25a1799c9bf16f743a7034ef9e523a9c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08a9ab45601baa445a3ee9667c884a36, type: 2}
     - target: {fileID: 3887916699008086788, guid: 25a1799c9bf16f743a7034ef9e523a9c, type: 3}
       propertyPath: m_Name
       value: Office2
       objectReference: {fileID: 0}
+    - target: {fileID: 7388005981804197714, guid: 25a1799c9bf16f743a7034ef9e523a9c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6cd027c3e4c7d60469f401114b0bebde, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
